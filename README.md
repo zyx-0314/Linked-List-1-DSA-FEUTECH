@@ -1,4 +1,4 @@
-# Linked List - Number Name Storage
+# Linked List - Products
 
 <a name="readme-top"></a>
 
@@ -9,7 +9,7 @@
     <img src="./Docs/nyebe_white.png" alt="Nyebe" width="130" height="100">
   </a>
 
-  <h3 align="center">Calculator</h3>
+  <h3 align="center">Products</h3>
 </div>
 <div align="center">
   
@@ -17,7 +17,7 @@
 
 <br />
 
-![](https://visit-counter.vercel.app/counter.png?page=zyx-0314/Linked-List-1-CP2-FEUTECH)
+![](https://visit-counter.vercel.app/counter.png?page=zyx-0314/Linked-List-1-DSA-FEUTECH)
 
 ---
 
@@ -84,6 +84,7 @@ Versions:
 
 #### Features
 - Linked List
+- Stack
 - Create, Delete and Traverse
 
 <br />
