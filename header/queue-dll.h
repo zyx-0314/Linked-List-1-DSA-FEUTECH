@@ -1,16 +1,16 @@
-#ifndef STACK_H
-#define STACK_H
+#ifndef QUEUE_H
+#define QUEUE_H
 
-/* Stack
- * - FILO
+/* Queue
+ * - LILO
  * - tail <- node
  * 		Data is being pulled from tail and data is being pushed in the tail
 */
 
-#include "node-sll.h"
+#include "node-dll.h"
 #include <iostream>
 
-class Stack_sll
+class Queue_dll
 {
 public:
   void Starting();
@@ -21,9 +21,9 @@ private:
 
   ProductData SetProductData();
 
-  void SetProduct(Stack_SLL *&);
-  void DeleteNode(Stack_SLL *&);
-  void Traversal(Stack_SLL *&);
+  void SetProduct(Queue_DLL *&tail);
+  void DeleteNode(Queue_DLL *&head);
+  void Traversal(Queue_DLL *&head);
 };
 
-#endif // STACK_H
+#endif // QUEUE_H

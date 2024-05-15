@@ -1,8 +1,9 @@
-#include "../header/stack-sll.h"
+#include "../header/queue-dll.h"
 
-void Stack_sll::Starting() {
+void Queue_dll::Starting() {
   int choice;
-	Stack_SLL* tail = NULL;
+  Queue_DLL *tail = NULL, *head = NULL;
+  bool loop = true;
 
 	do {
 		MainMenu(choice);
@@ -14,10 +15,10 @@ void Stack_sll::Starting() {
 			SetProduct(tail);
 			break;
 		case 2:
-			Traversal(tail);
+			Traversal(head);
 			break;
 		case 3:
-			DeleteNode(tail);
+			DeleteNode(head);
 			break;
 		default:
 			break;
@@ -27,7 +28,7 @@ void Stack_sll::Starting() {
 	} while (true);
 }
 
-void Stack_sll::MainMenu(int& choice) {
+void Queue_dll::MainMenu(int& choice) {
 	std::cout << "1. Add New Stack\n"
 		<< "2. Display Stack\n"
 		<< "3. Delete Stack\n"
@@ -40,7 +41,7 @@ void Stack_sll::MainMenu(int& choice) {
 	system("cls");
 }
 
-int Stack_sll::MainMenu() {
+int Queue_dll::MainMenu() {
   int choice;
 
 	std::cout << "1. Add New Stack\n"
@@ -57,7 +58,7 @@ int Stack_sll::MainMenu() {
 	system("cls");
 }
 
-ProductData Stack_sll::SetProductData() {
+ProductData Queue_dll::SetProductData() {
 	ProductData temp;
 
 	std::cout << "Enter Product Name: ";
@@ -72,22 +73,22 @@ ProductData Stack_sll::SetProductData() {
 	return temp;
 }
 
-void Stack_sll::SetProduct(Stack_SLL*& tail) {
-	Stack_SLL* temp = NULL;
-	temp = new Stack_SLL;
+void Queue_dll::SetProduct(Queue_DLL*& tail) {
+	Queue_DLL* temp = NULL;
+	temp = new Queue_DLL;
 
 
 	if (!tail)
 	{
-		temp->next = NULL; // in head the next will contain null
+		temp->prev = NULL; // in head the prev will contain null
 
 		// add data
 		temp->productData = SetProductData();
 	}
-	else
+	else         // else counter is not 0
 	{
-		temp = new Stack_SLL;
-		temp->next = tail; // in temp there is next where contains tail
+		temp = new Queue_DLL;
+		temp->prev = tail; // in temp there is prev where contains tail
 
 		// add data
 		temp->productData = SetProductData();
@@ -97,8 +98,8 @@ void Stack_sll::SetProduct(Stack_SLL*& tail) {
 	tail = temp; // tail will be updated
 }
 
-void Stack_sll::DeleteNode(Stack_SLL*& tail) {
-	Stack_SLL* temp = NULL, * prev = NULL;
+void Queue_dll::DeleteNode(Queue_DLL*& tail) {
+	Queue_DLL* temp = NULL, * prev = NULL;
 	std::string toDelete;
 
 	// accept what to delete
@@ -128,14 +129,15 @@ void Stack_sll::DeleteNode(Stack_SLL*& tail) {
 	} while (true);
 }
 
-void Stack_sll::Traversal(Stack_SLL*& tail) {
-	Stack_SLL* temp = tail; // temp will point to the tail
+void Queue_dll::Traversal(Queue_DLL*& starting) {
+	Queue_DLL* temp = starting; // temp will point to the starting that has been set
 
 	if (temp) // if temp is not empty
 	{
 		do {
 			std::cout << temp->productData.productName << " - " << temp->productData.quantity << " - " << temp->productData.price << "\n"; // display the data
 
+      
 			if (temp->next == NULL) // if the next is empty break the loop
 				break;
 
