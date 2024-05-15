@@ -1,12 +1,12 @@
 #include "./header/stack-sll.h"
-#include "./header/queue-dll.h"
+#include "./header/dll.h"
 #include <cstdlib>
 
 int Menu();
 
 int main() {
   Stack_sll stack;
-  Queue_dll queue;
+  Dll queue;
 
   do {
   switch (Menu()) {

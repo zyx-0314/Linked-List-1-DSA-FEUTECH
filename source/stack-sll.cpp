@@ -40,23 +40,6 @@ void Stack_sll::MainMenu(int& choice) {
 	system("cls");
 }
 
-int Stack_sll::MainMenu() {
-  int choice;
-
-	std::cout << "1. Add New Stack\n"
-		<< "2. Display Stack\n"
-		<< "3. Delete Stack\n"
-		<< "0. Exit\n"
-		<< "\n"
-		<< ":: ";
-
-  std::cin >> choice;
-
-  return choice;
-
-	system("cls");
-}
-
 ProductData Stack_sll::SetProductData() {
 	ProductData temp;
 
@@ -76,7 +59,6 @@ void Stack_sll::SetProduct(Node_SLL*& tail) {
 	Node_SLL* temp = NULL;
 	temp = new Node_SLL;
 
-
 	if (!tail)
 	{
 		temp->next = NULL; // in head the next will contain null
@@ -86,7 +68,6 @@ void Stack_sll::SetProduct(Node_SLL*& tail) {
 	}
 	else
 	{
-		temp = new Node_SLL;
 		temp->next = tail; // in temp there is next where contains tail
 
 		// add data

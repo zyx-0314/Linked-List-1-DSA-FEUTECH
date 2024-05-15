@@ -17,7 +17,6 @@ public:
 
 private:
   void MainMenu(int &);
-  int MainMenu();
 
   ProductData SetProductData();
 
