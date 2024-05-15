@@ -2,7 +2,7 @@
 
 void Stack_sll::Starting() {
   int choice;
-	Stack_SLL* tail = NULL;
+	Node_SLL* tail = NULL;
 
 	do {
 		MainMenu(choice);
@@ -72,9 +72,9 @@ ProductData Stack_sll::SetProductData() {
 	return temp;
 }
 
-void Stack_sll::SetProduct(Stack_SLL*& tail) {
-	Stack_SLL* temp = NULL;
-	temp = new Stack_SLL;
+void Stack_sll::SetProduct(Node_SLL*& tail) {
+	Node_SLL* temp = NULL;
+	temp = new Node_SLL;
 
 
 	if (!tail)
@@ -86,7 +86,7 @@ void Stack_sll::SetProduct(Stack_SLL*& tail) {
 	}
 	else
 	{
-		temp = new Stack_SLL;
+		temp = new Node_SLL;
 		temp->next = tail; // in temp there is next where contains tail
 
 		// add data
@@ -97,8 +97,8 @@ void Stack_sll::SetProduct(Stack_SLL*& tail) {
 	tail = temp; // tail will be updated
 }
 
-void Stack_sll::DeleteNode(Stack_SLL*& tail) {
-	Stack_SLL* temp = NULL, * prev = NULL;
+void Stack_sll::DeleteNode(Node_SLL*& tail) {
+	Node_SLL* temp = NULL, * prev = NULL;
 	std::string toDelete;
 
 	// accept what to delete
@@ -128,8 +128,8 @@ void Stack_sll::DeleteNode(Stack_SLL*& tail) {
 	} while (true);
 }
 
-void Stack_sll::Traversal(Stack_SLL*& tail) {
-	Stack_SLL* temp = tail; // temp will point to the tail
+void Stack_sll::Traversal(Node_SLL*& tail) {
+	Node_SLL* temp = tail; // temp will point to the tail
 
 	if (temp) // if temp is not empty
 	{

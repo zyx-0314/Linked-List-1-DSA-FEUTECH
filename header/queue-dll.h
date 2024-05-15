@@ -21,9 +21,9 @@ private:
 
   ProductData SetProductData();
 
-  void SetProduct(Queue_DLL *&tail);
-  void DeleteNode(Queue_DLL *&head);
-  void Traversal(Queue_DLL *&head);
+  void SetProduct(Node_DLL *&tail);
+  void DeleteNode(Node_DLL *&head);
+  void Traversal(Node_DLL *&head);
 };
 
 #endif // QUEUE_H

@@ -2,7 +2,7 @@
 
 void Queue_dll::Starting() {
   int choice;
-  Queue_DLL *tail = NULL, *head = NULL;
+  Node_DLL *tail = NULL, *head = NULL;
   bool loop = true;
 
 	do {
@@ -73,9 +73,9 @@ ProductData Queue_dll::SetProductData() {
 	return temp;
 }
 
-void Queue_dll::SetProduct(Queue_DLL*& tail) {
-	Queue_DLL* temp = NULL;
-	temp = new Queue_DLL;
+void Queue_dll::SetProduct(Node_DLL*& tail) {
+	Node_DLL* temp = NULL;
+	temp = new Node_DLL;
 
 
 	if (!tail)
@@ -87,7 +87,7 @@ void Queue_dll::SetProduct(Queue_DLL*& tail) {
 	}
 	else         // else counter is not 0
 	{
-		temp = new Queue_DLL;
+		temp = new Node_DLL;
 		temp->prev = tail; // in temp there is prev where contains tail
 
 		// add data
@@ -98,8 +98,8 @@ void Queue_dll::SetProduct(Queue_DLL*& tail) {
 	tail = temp; // tail will be updated
 }
 
-void Queue_dll::DeleteNode(Queue_DLL*& tail) {
-	Queue_DLL* temp = NULL, * prev = NULL;
+void Queue_dll::DeleteNode(Node_DLL*& tail) {
+	Node_DLL* temp = NULL, * prev = NULL;
 	std::string toDelete;
 
 	// accept what to delete
@@ -129,8 +129,8 @@ void Queue_dll::DeleteNode(Queue_DLL*& tail) {
 	} while (true);
 }
 
-void Queue_dll::Traversal(Queue_DLL*& starting) {
-	Queue_DLL* temp = starting; // temp will point to the starting that has been set
+void Queue_dll::Traversal(Node_DLL*& starting) {
+	Node_DLL* temp = starting; // temp will point to the starting that has been set
 
 	if (temp) // if temp is not empty
 	{

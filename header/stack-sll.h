@@ -21,9 +21,9 @@ private:
 
   ProductData SetProductData();
 
-  void SetProduct(Stack_SLL *&);
-  void DeleteNode(Stack_SLL *&);
-  void Traversal(Stack_SLL *&);
+  void SetProduct(Node_SLL *&);
+  void DeleteNode(Node_SLL *&);
+  void Traversal(Node_SLL *&);
 };
 
 #endif // STACK_H

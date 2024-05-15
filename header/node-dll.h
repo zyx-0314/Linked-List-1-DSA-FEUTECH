@@ -1,15 +1,15 @@
-#ifndef QUEUE_DLL_H
-#define QUEUE_DLL_H
+#ifndef NODE_DLL_H
+#define NODE_DLL_H
 
 #include "ds.h"
 
 // Node
-struct Queue_DLL {
+struct Node_DLL {
 	// Address
-	Queue_DLL* next = NULL;
-	Queue_DLL* prev = NULL;
+	Node_DLL* next = NULL;
+	Node_DLL* prev = NULL;
 	// Data
 	ProductData productData;
 };
 
-#endif // QUEUE_DLL_H
+#endif // NODE_DLL_H

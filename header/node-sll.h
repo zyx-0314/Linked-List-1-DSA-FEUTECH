@@ -1,14 +1,14 @@
-#ifndef STACK_SLL_H
-#define STACK_SLL_H
+#ifndef NODE_SLL_H
+#define NODE_SLL_H
 
 #include "ds.h"
 
 // Node
-struct Stack_SLL {
+struct Node_SLL {
 	// Address
-	Stack_SLL* next = NULL;
+	Node_SLL* next = NULL;
 	// Data
 	ProductData productData;
 };
 
-#endif // STACK_SLL_H
+#endif // NODE_SLL_H
